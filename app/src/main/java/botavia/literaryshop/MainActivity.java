@@ -11,8 +11,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import entities.Customer;
+import model.datasource.DatabaseList;
 
 public class MainActivity extends AppCompatActivity {
+    //Create the database lists
+    public static DatabaseList databaseList = new DatabaseList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
+
+        //Set the content of the databaseList
+        databaseList.setLists();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -57,16 +66,29 @@ public class MainActivity extends AppCompatActivity {
      * This method is executed when the SignIn button is clicked
      * @param v
      */
-    public void startVerificationService(View v) {
-        EditText username = (EditText)findViewById(R.id.editText);
-        EditText password = (EditText)findViewById(R.id.editText2);
+    public void startVerification(View v) {
+        // Extract the username and password that were entered
+        EditText usernameE = (EditText)findViewById(R.id.editText);
+        EditText passwordE = (EditText)findViewById(R.id.editText2);
 
-        // An intent containing the username and password entered
-        Intent verificationIntent = new Intent(this, VerificationService.class);
-        verificationIntent.putExtra("username", username.getText().toString());
-        verificationIntent.putExtra("password", password.getText().toString());
+        String username = usernameE.getText().toString();
+        String password = passwordE.getText().toString();
 
-        startService(verificationIntent);
+        try {
+            //find the user in the database
+            Customer customer = databaseList.findCustomerByUsername(username);
+            if (customer.getPassword().equals(password)) {
+                // if the login in valid, continue to the store
+                Intent loginIntent(this, ProductList.class);
+                loginIntent.putExtra("customerId", cutomer.getId());
+                startActivity(loginIntent);
+            }
+            else throw new Exception("The password you have entered is incorrect");
+        }
+
+        catch (Exception a) {
+            Toast.makeText(this, a.getMessage(), Toast.LENGTH_SHORT);
+        }
 
     }
 

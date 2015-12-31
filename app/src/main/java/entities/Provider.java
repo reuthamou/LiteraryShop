@@ -30,12 +30,15 @@ public class Provider {
      * Constructor
      * @param name customer's name
      * @param address customer's address
-     * @param birthDate customer's address to gather age
      * @param email customer's email
-     * @param gender customer's gender
      */
-    public Provider(String name, String address, Date birthDate, String email, Gender gender, String username, String password)
+    public Provider(String name, String address, String email, String username, String password)
     {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.username = username;
+        this.password = password;
         this.rating = 0.0;
         this.experienceYears = 0;
     }
@@ -56,6 +59,8 @@ public class Provider {
         this.experienceYears = experienceYears;
     }
 
+    public String getName() { return name;}
+
     @Override
     public String toString() {
         return getName();
@@ -71,5 +76,11 @@ public class Provider {
     public ArrayList<WrittenWork> getProducts() { return products; }
 
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }
