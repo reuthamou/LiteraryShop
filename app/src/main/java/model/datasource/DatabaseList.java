@@ -127,7 +127,9 @@ public class DatabaseList implements Backend {
             this.addCustomer(new Customer("Rotem", "Nokdim", new Date(1993, 8, 21), "rotemfridman@gmail.com", Gender.FEMALE, "rotem", "rotem123"));
             this.addCustomer(new Customer("Reut", "beitar", new Date(1993, 1, 1), "reuthamou@gmail.com", Gender.FEMALE, "reut", "reut123"));
 
-            this.addProvider(new Provider("Amazon", "US", ));
+            this.addProvider(new Provider("Amazon", "US", "amazon@amazon.com", "amazon", "amazon123"));
+            this.addProvider(new Provider("eBay", "US", "ebay@ebay.com", "ebay", "ebay123" ));
+            this.addProvider(new Provider("Target", "US", "target@target.com", "target", "target123" ));
         }
 
         catch (Exception a) {
