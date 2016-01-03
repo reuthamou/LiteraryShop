@@ -79,17 +79,22 @@ public class MainActivity extends AppCompatActivity {
             Customer customer = databaseList.findCustomerByUsername(username);
             if (customer.getPassword().equals(password)) {
                 // if the login in valid, continue to the store
-                Intent loginIntent(this, ProductList.class);
-                loginIntent.putExtra("customerId", cutomer.getId());
+                Intent loginIntent = new Intent(this, ProductList.class);
+                loginIntent.putExtra("customerId", customer.getId());
                 startActivity(loginIntent);
             }
-            else throw new Exception("The password you have entered is incorrect");
+            else throw new Exception(getResources().getText(R.string.password_incorrecrt).toString());
         }
 
         catch (Exception a) {
-            Toast.makeText(this, a.getMessage(), Toast.LENGTH_SHORT);
+            Toast.makeText(this, a.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public void goToSignUp(View v) {
+        Intent signUpIntent = new Intent (this, CustomerSignUpActivity.class);
+        startActivity(signUpIntent);
     }
 
 }

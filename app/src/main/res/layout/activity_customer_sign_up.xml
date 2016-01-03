@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,9 +16,11 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Sign Up Form"
+        android:textSize="15pt"
         android:id="@+id/signUpForm"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,7 +30,7 @@
         android:id="@+id/customerName"
         android:layout_below="@+id/signUpForm"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="25dp"
         android:hint="Name" />
 
     <EditText
@@ -104,18 +107,36 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/editText5"
-        android:layout_below="@+id/editText4"
-        android:layout_alignRight="@+id/editText4"
-        android:layout_alignEnd="@+id/editText4"
         android:hint="Confirm Password"
-        android:layout_marginTop="10pt" />
+        android:layout_below="@+id/editText4"
+        android:layout_alignLeft="@+id/editText4"
+        android:layout_alignStart="@+id/editText4" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        android:background="@drawable/round_button"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:id="@+id/signUpButton"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/editText5" />
+        android:layout_below="@+id/editText5"
+        android:layout_marginTop="20pt"
+        android:onClick="register"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/error_message_registration"
+        android:layout_below="@+id/signUpForm"
+        android:layout_alignLeft="@+id/customerName"
+        android:layout_alignStart="@+id/customerName"
+        android:layout_marginTop="9dp"
+        android:textStyle="italic"
+        android:textColor="@color/error_red"
+        android:visibility="invisible"
+        />
+
 </RelativeLayout>

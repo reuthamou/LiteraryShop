@@ -8,5 +8,8 @@
     <string name="Sign_in_prompt">Please Sign In</string>
     <string name="Sign_in">Sign In</string>
     <string name="registration_prompt">Don\'t have an account?</string>
+    <string name="password_incorrecrt">The password you have entered is incorrect</string>
+    <string name="email_taken">This email address is already registered!</string>
 
-    <string name="title_activity_product_list">Product_list</string></resources>
+    <string name="title_activity_product_list">Product_list</string>
+</resources>

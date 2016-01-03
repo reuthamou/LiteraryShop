@@ -8,4 +8,5 @@
     <string name="Sign_in_prompt">התחבר לחשבונך</string>
     <string name="Sign_in">התחבר</string>
     <string name="registration_prompt">אין לך חשבון?</string>
+    <string name="password_incorrecrt">הסיסמא שהזנת אינה נכונה</string>
 </resources>
