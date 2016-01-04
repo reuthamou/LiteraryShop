@@ -35,7 +35,7 @@ public class ProductList extends AppCompatActivity {
                 return intent;
             }
             MainActivity.databaseList.
-            public MainActivity.DatabaseList getGet() {
+            public MainActivity.databaseList getGet() {
                 return get;
             }
         });
