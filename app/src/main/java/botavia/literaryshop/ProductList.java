@@ -9,10 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import botavia.literaryshop.MainActivity;
 
-public class Product_list extends AppCompatActivity {
+import model.datasource.DatabaseList;
 
-    ;
+public class ProductList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,15 @@ public class Product_list extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-            Intent intent = new Intent ();
+            public Intent intent;
 
-
+            public Intent getIntent() {
+                return intent;
+            }
+            MainActivity.databaseList.
+            public MainActivity.DatabaseList getGet() {
+                return get;
+            }
         });
     }
 

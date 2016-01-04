@@ -9,4 +9,5 @@
     <string name="Sign_in">Sign In</string>
     <string name="registration_prompt">Don\'t have an account?</string>
 
-    <string name="title_activity_product_list">Product_list</string></resources>
+    <string name="title_activity_product_list">Product_list</string>
+    <string name="title_activity_about">About</string></resources>
