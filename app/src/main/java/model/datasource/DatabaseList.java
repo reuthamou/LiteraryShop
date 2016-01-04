@@ -52,7 +52,7 @@ public class DatabaseList implements Backend {
         for (Provider item:Providers) {
             if (provider.equals(item)) throw new Exception("This provider already exists in the Database");
         }
-        provider.setId(CustomerCounter++);
+        provider.setId(ProviderCounter++);
         Providers.add(provider);
     }
 
@@ -115,6 +115,15 @@ public class DatabaseList implements Backend {
             }
         }
         throw new Exception("wrong Username");
+    }
+
+    public boolean doesCustomerEmailExist(String email) {
+        for (Customer customer:Customers) {
+            if (customer.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void setLists() {

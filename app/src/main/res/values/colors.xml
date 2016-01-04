@@ -5,7 +5,7 @@
     <color name="colorAccent">#4079ff</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="error_red">#b80000</color>
     <color name="blue">#0d365c</color>
     <color name="purple">#430d5c</color>
-
 </resources>

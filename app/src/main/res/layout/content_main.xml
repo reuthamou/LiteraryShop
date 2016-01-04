@@ -63,7 +63,8 @@
         android:textColorLink="#0011a8"
         android:textColor="#111751"
         android:clickable="true"
-        />
+        android:onClick="goToSignUp"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="match_parent"
